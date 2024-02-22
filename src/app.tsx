@@ -1,27 +1,20 @@
-import React from 'react';
-import { ThemeContext } from './context/theme-context';
-import { Icon } from './components/icon';
+import React, { useEffect, useState } from 'react';
+import { Header } from './components/header';
 
 export const App = () => {
-  const { currentTheme, changeCurrentTheme } = React.useContext(ThemeContext);
-  return (
-    <div className="h-screen flex bg-color-bg justify-center items-center ">
-      <div className="h-screen flex justify-center items-center ">
-        <Icon icon="github" size={40} />
-      </div>
+  // const { currentTheme, changeCurrentTheme } = React.useContext(ThemeContext);
+  const [mounted, setMounted] = useState(false);
 
-      <div className="flex flex-col items-center">
-        <h1 className="text-3xl font-bold text-color-text">Hello World</h1>
-        <button
-          type="button"
-          className="px-4 py-2 bg-color-primary text-color-text-secondary mt-4"
-          onClick={() =>
-            changeCurrentTheme(currentTheme === 'dark' ? 'light' : 'dark')
-          }
-        >
-          Change Theme
-        </button>
-      </div>
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  return (
+    <div className="h-screen w-screen bg-color-bg-secondary text-color-text">
+      <Header />
+      <main className="max-w-[85%] mx-auto flex flex-col items-center justify-center">
+        <h1>Opa</h1>
+      </main>
     </div>
   );
 };
