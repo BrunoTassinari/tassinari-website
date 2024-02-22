@@ -7,7 +7,10 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        bkg: 'var(--bg)',
+        'color-bg': 'var(--color-bg)',
+        'color-text': 'var(--color-text)',
+        'color-text-secondary': 'var(--color-text-secondary)',
+        'color-primary': 'var(--color-primary)',
       },
     },
   },

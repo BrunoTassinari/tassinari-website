@@ -10,7 +10,7 @@ interface ListIconProps {
 const iconList: ListIconProps = {
   github: (size: number) => (
     <svg
-      className="fill-current text-bkg"
+      className="fill-current text-color-primary"
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
