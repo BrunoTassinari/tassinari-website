@@ -10,7 +10,7 @@ import {
 const defaultValue = {
   currentTheme: 'light',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  changeCurrentTheme: (newTheme: 'light' | 'dark') => {},
+  changeCurrentTheme: (_newTheme: 'light' | 'dark') => {},
 };
 
 export const ThemeContext = createContext(defaultValue);
