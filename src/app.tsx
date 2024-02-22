@@ -1,18 +1,20 @@
-import React from 'react';
-import { ThemeContext } from './context/theme-context';
+import React, { useEffect, useState } from 'react';
+import { Header } from './components/header';
 
 export const App = () => {
-  const { currentTheme, changeCurrentTheme } = React.useContext(ThemeContext);
+  // const { currentTheme, changeCurrentTheme } = React.useContext(ThemeContext);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
   return (
-    <div className="h-screen bg-bkg flex justify-center items-center ">
-      <button
-        type="button"
-        onClick={() =>
-          changeCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
-        }
-      >
-        {currentTheme === 'light' ? 'dark' : 'light'}
-      </button>
+    <div className="h-screen w-screen bg-color-bg-secondary text-color-text">
+      <Header />
+      <main className="max-w-[85%] mx-auto flex flex-col items-center justify-center">
+        <h1>Opa</h1>
+      </main>
     </div>
   );
 };
