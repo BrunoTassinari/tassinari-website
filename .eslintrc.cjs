@@ -35,5 +35,6 @@ module.exports = {
     'react/function-component-definition': 0,
     'import/prefer-default-export': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    'react/require-default-props': 0,
   },
 };
