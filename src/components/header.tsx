@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-
 import { ThemeContext } from '../context/theme-context';
+import { anchors } from '../contants';
 import { Icon } from './icon';
 
 interface NavBarProps {
@@ -29,6 +29,21 @@ const menuAnimation = {
   },
 };
 
+const linkAnimation = {
+  initial: {
+    y: '30vh',
+    transition: {
+      duration: 0.5,
+    },
+  },
+  open: {
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 const ToggleTheme = () => {
   const { currentTheme, changeCurrentTheme } = useContext(ThemeContext);
 
@@ -42,6 +57,22 @@ const ToggleTheme = () => {
     >
       <Icon icon={currentTheme === 'light' ? 'moon' : 'sun'} size={24} />
     </button>
+  );
+};
+
+const AnimatedLink = ({ href, label, onClick }: any) => {
+  return (
+    <motion.div variants={linkAnimation} initial="initial" animate="open">
+      <li key={href}>
+        <a
+          href={href}
+          className="text-[1.2rem] font-bold text-color-text-secondary"
+          onClick={onClick}
+        >
+          {label}
+        </a>
+      </li>
+    </motion.div>
   );
 };
 
@@ -63,6 +94,18 @@ const Navbar = ({ open, toggleMenu }: NavBarProps) => (
             <Icon icon="closeMenu" size={20} />
           </button>
         </div>
+        <nav className="max-w-[93%] h-[90%] mx-auto my-10">
+          <ul className="flex flex-col h-[40%] justify-between items-center space-y-3 overflow-hidden">
+            {anchors.map((anchor) => (
+              <AnimatedLink
+                key={anchor.id}
+                href={`#${anchor.id}`}
+                label={anchor.label}
+                onClick={toggleMenu}
+              />
+            ))}
+          </ul>
+        </nav>
       </motion.div>
     )}
   </AnimatePresence>

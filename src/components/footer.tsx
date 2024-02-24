@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="w-[90%] py-3 m-auto container flex flex-col items-center justify-between">
         <section className="flex justify-between items-center w-2/4">
           <section className="flex items-center">
-            <Icon icon="github" size={24} />
+            <Icon icon="github" size={24} className="mr-1" />
             <a
               className="underline text-xs"
               href="https://github.com/BrunoTassinari"
@@ -17,7 +17,7 @@ export const Footer = () => {
             </a>
           </section>
           <section className="flex items-center">
-            <Icon icon="linkedin" size={24} />
+            <Icon icon="linkedin" size={24} className="mr-1" />
             <a
               className="underline text-xs"
               href="https://github.com/BrunoTassinari"
