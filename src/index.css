@@ -11,10 +11,11 @@
 
 :root {
   --color-bg: #eff1f5;
-  --color-bg-secondary: #dce0e8;
+  --color-bg-secondary: #e8ebef;
   --color-text: #4c4f69;
   --color-text-secondary: #eff1f5;
-  --color-primary: #de9584;
+  --color-primary: #ef7f66;
+  --color-hover-primary: #f28c7e;
 }
 
 .dark {
@@ -23,4 +24,5 @@
   --color-text: #c6d0f5;
   --color-text-secondary: #1e1e2e;
   --color-primary: #e78284;
+  --color-hover-primary: #f59698;
 }

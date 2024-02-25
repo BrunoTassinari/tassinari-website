@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ThemeContext } from '../context/theme-context';
-import { anchors } from '../contants';
+import { ThemeContext } from '../../context/theme-context';
+import { anchors } from '../../constants';
 import { Icon } from './icon';
 
 interface NavBarProps {
@@ -49,6 +49,7 @@ const ToggleTheme = () => {
 
   return (
     <button
+      className="transition-colors hover:bg-color-bg-secondary rounded-lg p-1"
       type="button"
       aria-label="Toggle Dark Mode"
       onClick={() => {
@@ -84,7 +85,7 @@ const Navbar = ({ open, toggleMenu }: NavBarProps) => (
         initial="initial"
         animate="animate"
         exit="exit"
-        className="fixed left-0 top-0 w-full h-full origin-top bg-color-primary"
+        className="fixed left-0 top-0 w-full h-full origin-top bg-color-primary overflow-hidden"
       >
         <div className="max-w-[93%] mx-auto py-3 flex items-center justify-between">
           <span className="text-[1rem] font-bold text-color-text-secondary">
@@ -128,7 +129,7 @@ const Menu = () => {
         type="button"
         onClick={toggleMenu}
         aria-label="Open menu"
-        className="ml-4"
+        className="transition-colors hover:bg-color-bg-secondary rounded-lg p-1"
       >
         <Icon icon="openMenu" size={24} />
       </button>
@@ -144,7 +145,7 @@ export const Header = () => (
         Bruno Tassinari
       </span>
 
-      <div className="flex items-center">
+      <div className="flex items-center gap-1">
         <ToggleTheme />
         <Menu />
       </div>
