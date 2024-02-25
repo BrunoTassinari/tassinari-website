@@ -12,6 +12,7 @@ export default {
         'color-text': 'var(--color-text)',
         'color-text-secondary': 'var(--color-text-secondary)',
         'color-primary': 'var(--color-primary)',
+        'color-hover-primary': 'var(--color-hover-primary)',
       },
     },
   },

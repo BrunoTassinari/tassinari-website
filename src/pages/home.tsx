@@ -1,6 +1,7 @@
-import { Container, Header } from '../components/container';
-import { Icon } from '../components/icon';
-import { Skills } from '../components/skills';
+import { Container, Header } from '../components/ui/container';
+import { Icon } from '../components/ui/icon';
+import { List } from '../components/ui/list';
+import { skills } from '../constants';
 
 export const Home = () => {
   return (
@@ -40,7 +41,7 @@ export const Home = () => {
         </div>
       </Container>
 
-      <Container>
+      <Container id="about">
         <Header title="Sobre mim" subtitle="Informações" />
         <p className="text-[0.9rem] text-color-text text-justify">
           Lorem Ipsum é simplesmente uma simulação de texto da indústria
@@ -51,9 +52,25 @@ export const Home = () => {
         </p>
       </Container>
 
-      <Container>
+      <Container id="skills">
         <Header title="Tecnologias" subtitle="Conhecimentos" />
-        <Skills />
+        <section className="flex justify-around">
+          <List items={skills.frontend} />
+          <List items={skills.backend} />
+        </section>
+      </Container>
+
+      <Container id="contact">
+        <Header subtitle="Vamos conversar" title="Entre em contato" />
+        <span className="m-0 text-[1rem] text-gray dark:text-whiteIce">
+          Estou disponível para novos projetos e oportunidades. Vamos conversar!
+        </span>
+        <button
+          type="button"
+          className="bg-color-primary text-color-text-secondary p-1 rounded-md transition-colors hover:bg-color-hover-primary"
+        >
+          <a href="mailto:bruno.fagundes80@gmail.com">Entre em contato</a>
+        </button>
       </Container>
     </div>
   );
