@@ -1,5 +1,6 @@
 import { Container, Header } from '../components/container';
 import { Icon } from '../components/icon';
+import { Skills } from '../components/skills';
 
 export const Home = () => {
   return (
@@ -48,6 +49,11 @@ export const Home = () => {
           embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum é
           simplesmente uma simulação de texto.
         </p>
+      </Container>
+
+      <Container>
+        <Header title="Tecnologias" subtitle="Conhecimentos" />
+        <Skills />
       </Container>
     </div>
   );

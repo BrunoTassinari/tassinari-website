@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeContext } from '../context/theme-context';
-import { anchors } from '../contants';
+import { anchors } from '../constants';
 import { Icon } from './icon';
 
 interface NavBarProps {
