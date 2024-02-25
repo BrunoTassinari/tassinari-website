@@ -1,7 +1,13 @@
 import { Container, Header } from '../components/ui/container';
 import { Icon } from '../components/ui/icon';
 import { List } from '../components/ui/list';
-import { skills } from '../constants';
+import { skills, experiences } from '../constants';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '../components/ui/tabs';
 
 export const Home = () => {
   return (
@@ -58,6 +64,55 @@ export const Home = () => {
           <List items={skills.frontend} />
           <List items={skills.backend} />
         </section>
+      </Container>
+
+      <Container id="projects">
+        <Header title="Meus projetos" subtitle="Portfólio" />
+      </Container>
+
+      <Container id="experience">
+        <Header title="Experiência" subtitle="Carreira" />
+        <Tabs
+          defaultValue={experiences.find((e) => e.default === true)?.company}
+        >
+          <TabsList className="bg-whiteIce mb-4">
+            {experiences.map((e: any) => (
+              <TabsTrigger key={e.company} value={e.company}>
+                {e.company}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+          <>
+            {experiences.map((e: any) => (
+              <TabsContent key={e.company} value={e.company}>
+                <div className="flex flex-col">
+                  <h3 className="text-[1.3rem] font-semibold text-color-text">
+                    {e.role}
+                  </h3>
+                  <span className="text-sm text-color-text">{e.period}</span>
+                </div>
+                <div className="mr-2 my-2">
+                  <ul className="flex flex-wrap text-xs text-color-primary">
+                    {e.stacks?.map((stack: any) => (
+                      <li key={stack} className="flex items-center  mr-2 mb-2">
+                        <section className="flex items-center">{stack}</section>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mr-2 my-2">
+                  <ul className="list-inside text-sm text-colo">
+                    {e.topics?.map((topic: any) => (
+                      <li key={topic} className="p-1">
+                        <section className="flex items-center">{topic}</section>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </TabsContent>
+            ))}
+          </>
+        </Tabs>
       </Container>
 
       <Container id="contact">

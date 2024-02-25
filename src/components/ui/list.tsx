@@ -6,7 +6,7 @@ interface ListProps {
 
 export const List = ({ items }: ListProps) => (
   <ul>
-    {items.map((item) => (
+    {items?.map((item) => (
       <li key={item.id} className="my-1">
         <section className="my-1 flex items-center gap-3">
           {item.icon ? <Icon icon={item.icon} size={24} /> : null}
