@@ -145,7 +145,9 @@ const iconList: ListIconProps = {
 
 export const Icon = ({ icon, size, className }: IconProps) => {
   return (
-    <div className={className ? `${className}` : ``}>
+    <div
+      className={className ? `cursor-pointer ${className}` : `cursor-pointer`}
+    >
       {' '}
       {iconList[icon](size)}
     </div>

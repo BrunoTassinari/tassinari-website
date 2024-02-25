@@ -12,9 +12,9 @@ export const App = () => {
   if (!mounted) return null;
 
   return (
-    <div className="h-screen w-screen bg-color-bg-secondary text-color-text">
+    <div className="h-screen w-screen bg-color-bg text-color-text">
       <Header />
-      <main className="max-w-[85%] mx-auto my-20 lex flex-col items-center justify-center">
+      <main className="max-w-[85%] mx-auto flex-col items-center justify-center">
         <Home />
       </main>
       <Footer />

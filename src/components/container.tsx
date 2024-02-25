@@ -4,7 +4,7 @@ interface ContainerProps {
   children: React.ReactNode;
 }
 
-interface HeaderContainerProps {
+interface HeaderProps {
   title: string;
   subtitle: string;
 }
@@ -21,11 +21,13 @@ export const Container = ({ id, className, children }: ContainerProps) => (
   </section>
 );
 
-export const HeaderContainer = ({ title, subtitle }: HeaderContainerProps) => (
-  <section className="flex flex-col ">
-    <span className="text-[0.8rem] text-color-primary uppercase">
-      {subtitle}
-    </span>
+export const Header = ({ title, subtitle }: HeaderProps) => (
+  <section className="flex flex-col gap-2">
+    <div className="overflow-hidden">
+      <span className="text-[0.8rem] bg-color-primary text-color-text-secondary p-1 px-2 rounded-md uppercase">
+        {subtitle}
+      </span>
+    </div>
     <span className="text-[1.5rem] font-bold uppercase text-color-text">
       {title}
     </span>
