@@ -4,11 +4,6 @@ import { ThemeContext } from '../../context/theme-context';
 import { anchors } from '../../constants';
 import { Icon } from './icon';
 
-interface NavBarProps {
-  open: boolean;
-  toggleMenu: () => void;
-}
-
 const menuAnimation = {
   initial: {
     scaleY: 0,
@@ -16,30 +11,15 @@ const menuAnimation = {
   animate: {
     scaleY: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: [0.12, 0, 0.39, 0],
     },
   },
   exit: {
     scaleY: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.2,
       ease: [0.12, 0, 0.39, 1],
-    },
-  },
-};
-
-const linkAnimation = {
-  initial: {
-    y: '30vh',
-    transition: {
-      duration: 0.5,
-    },
-  },
-  open: {
-    y: 0,
-    transition: {
-      duration: 0.7,
     },
   },
 };
@@ -63,11 +43,16 @@ const ToggleTheme = () => {
 
 const AnimatedLink = ({ href, label, onClick }: any) => {
   return (
-    <motion.div variants={linkAnimation} initial="initial" animate="open">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.5 }}
+    >
       <li key={href}>
         <a
           href={href}
-          className="text-[1.2rem] font-bold text-color-text-secondary"
+          className="text-base text-color-text-secondary"
           onClick={onClick}
         >
           {label}
@@ -77,42 +62,7 @@ const AnimatedLink = ({ href, label, onClick }: any) => {
   );
 };
 
-const Navbar = ({ open, toggleMenu }: NavBarProps) => (
-  <AnimatePresence>
-    {open && (
-      <motion.div
-        variants={menuAnimation}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        className="fixed left-0 top-0 w-full h-full origin-top bg-color-primary overflow-hidden"
-      >
-        <div className="max-w-[93%] mx-auto py-3 flex items-center justify-between">
-          <span className="text-[1rem] font-bold text-color-text-secondary">
-            Bruno Tassinari
-          </span>
-          <button aria-label="Close Navbar" type="button" onClick={toggleMenu}>
-            <Icon icon="closeMenu" size={20} />
-          </button>
-        </div>
-        <nav className="max-w-[93%] h-[90%] mx-auto my-10">
-          <ul className="flex flex-col h-[40%] justify-between items-center space-y-3 overflow-hidden">
-            {anchors.map((anchor) => (
-              <AnimatedLink
-                key={anchor.id}
-                href={`#${anchor.id}`}
-                label={anchor.label}
-                onClick={toggleMenu}
-              />
-            ))}
-          </ul>
-        </nav>
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
-
-const Menu = () => {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -131,23 +81,50 @@ const Menu = () => {
         aria-label="Open menu"
         className="transition-colors hover:bg-color-bg-secondary rounded-lg p-1"
       >
-        <Icon icon="openMenu" size={24} />
+        {open ? (
+          <Icon icon="closeMenu" size={24} />
+        ) : (
+          <Icon icon="openMenu" size={24} />
+        )}
       </button>
-      <Navbar open={open} toggleMenu={toggleMenu} />
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            variants={menuAnimation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="fixed right-0 top-10 origin-top bg-color-primary overflow-hidden rounded-b-lg"
+          >
+            <nav className="p-4">
+              <ul className="flex flex-col items-start space-y-2 overflow-hidden">
+                {anchors.map((anchor) => (
+                  <AnimatedLink
+                    key={anchor.id}
+                    href={`#${anchor.id}`}
+                    label={anchor.label}
+                    onClick={toggleMenu}
+                  />
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
 export const Header = () => (
   <header className="bg-color-bg border-b-color-primary border-b-[1px] fixed z-30 w-[100%]">
-    <div className="max-w-[93%] mx-auto py-3 flex items-center justify-between">
+    <div className="max-w-[93%] mx-auto py-1 flex items-center justify-between">
       <span className="text-[1rem] lg:text-[1.1rem] font-bold">
         Bruno Tassinari
       </span>
 
       <div className="flex items-center gap-1">
         <ToggleTheme />
-        <Menu />
+        <Navbar />
       </div>
     </div>
   </header>
