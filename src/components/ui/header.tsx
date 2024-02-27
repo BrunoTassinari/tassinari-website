@@ -74,7 +74,7 @@ const Navbar = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed right-0 top-10 origin-top bg-color-primary overflow-hidden rounded-b-lg"
+            className="fixed right-0 top-12 origin-top bg-color-primary overflow-hidden rounded-b-lg"
           >
             <nav className="p-4">
               <LinkedList items={anchors} action={toggleMenu} />
