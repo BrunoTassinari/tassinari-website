@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeContext } from '../../context/theme-context';
 import { anchors } from '../../constants';
 import { Icon } from './icon';
+import { LinkedList } from './list';
 
 const menuAnimation = {
   initial: {
@@ -41,27 +42,6 @@ const ToggleTheme = () => {
   );
 };
 
-const AnimatedLink = ({ href, label, onClick }: any) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.5 }}
-    >
-      <li key={href}>
-        <a
-          href={href}
-          className="text-base text-color-text-secondary"
-          onClick={onClick}
-        >
-          {label}
-        </a>
-      </li>
-    </motion.div>
-  );
-};
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -97,16 +77,7 @@ const Navbar = () => {
             className="fixed right-0 top-10 origin-top bg-color-primary overflow-hidden rounded-b-lg"
           >
             <nav className="p-4">
-              <ul className="flex flex-col items-start space-y-2 overflow-hidden">
-                {anchors.map((anchor) => (
-                  <AnimatedLink
-                    key={anchor.id}
-                    href={`#${anchor.id}`}
-                    label={anchor.label}
-                    onClick={toggleMenu}
-                  />
-                ))}
-              </ul>
+              <LinkedList items={anchors} action={toggleMenu} />
             </nav>
           </motion.div>
         )}

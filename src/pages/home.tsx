@@ -11,7 +11,7 @@ import {
 
 export const Home = () => {
   return (
-    <div className="my-14 flex flex-col gap-9">
+    <div className="my-8 flex flex-col gap-4">
       <Container>
         <Header title="Bruno Tassinari" subtitle="Meu nome é" />
         <p className="text-[0.9rem] text-color-text text-justify">
@@ -92,22 +92,10 @@ export const Home = () => {
                   <span className="text-sm text-color-text">{e.period}</span>
                 </div>
                 <div className="mr-2 my-2">
-                  <ul className="flex flex-wrap text-xs text-color-primary">
-                    {e.stacks?.map((stack: any) => (
-                      <li key={stack} className="flex items-center  mr-2 mb-2">
-                        <section className="flex items-center">{stack}</section>
-                      </li>
-                    ))}
-                  </ul>
+                  <List items={e.stacks} type="row" highlight />
                 </div>
                 <div className="mr-2 my-2">
-                  <ul className="list-inside text-sm text-colo">
-                    {e.topics?.map((topic: any) => (
-                      <li key={topic} className="p-1">
-                        <section className="flex items-center">{topic}</section>
-                      </li>
-                    ))}
-                  </ul>
+                  <List items={e.topics} />
                 </div>
               </TabsContent>
             ))}

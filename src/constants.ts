@@ -1,65 +1,88 @@
 export const anchors = [
-  { id: 'about', label: 'Sobre mim' },
-  { id: 'skills', label: 'Conhecimentos' },
-  { id: 'projects', label: 'Meus projetos' },
-  { id: 'experience', label: 'Experiências' },
-  { id: 'contact', label: 'Contato' },
+  { id: 'about', value: 'Sobre mim' },
+  { id: 'skills', value: 'Conhecimentos' },
+  { id: 'projects', value: 'Meus projetos' },
+  { id: 'experience', value: 'Experiências' },
+  { id: 'contact', value: 'Contato' },
 ];
 
 export const skills = {
   frontend: [
     {
-      title: 'HTML/CSS',
+      value: 'HTML/CSS',
       icon: 'html',
     },
     {
-      title: 'Tailwind CSS',
+      value: 'Tailwind CSS',
       icon: 'tailwind',
     },
     {
-      title: 'Next/ReactJS',
+      value: 'Next/ReactJS',
       icon: 'react',
     },
     {
-      title: 'Angular',
+      value: 'Angular',
       icon: 'angular',
     },
     {
-      title: 'JavaScript',
+      value: 'JavaScript',
       icon: 'javascript',
     },
     {
-      title: 'TypeScript',
+      value: 'TypeScript',
       icon: 'typescript',
     },
   ],
   backend: [
     {
-      title: 'Docker',
+      value: 'Docker',
       icon: 'docker',
     },
     {
-      title: 'Express/NodeJS',
+      value: 'Express/NodeJS',
       icon: 'nodejs',
     },
     {
-      title: 'PostgreSQL',
+      value: 'PostgreSQL',
       icon: 'postgresql',
     },
     {
-      title: 'Mongo DB',
+      value: 'Mongo DB',
       icon: 'mongodb',
     },
     {
-      title: '.NET',
+      value: '.NET',
       icon: 'dotnet',
     },
     {
-      title: 'Java',
+      value: 'Java',
       icon: 'java',
     },
   ],
 };
+
+export const projects = [
+  {
+    keyof: 'project-1',
+    name: 'Flex Turismos',
+    subtitle: 'Landing Page',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'flex-turismos',
+    link: 'https://brunotassinari.github.io/flex-turismos/',
+    alt: 'Project 1',
+    stack: [
+      {
+        value: 'HTML/CSS',
+      },
+      {
+        value: 'Tailwind CSS',
+      },
+      {
+        value: 'JavaScript',
+      },
+    ],
+  },
+];
 
 export const experiences = [
   {
@@ -67,12 +90,37 @@ export const experiences = [
     role: 'Fullstack developer',
     company: 'Kbase',
     period: 'Dez 2021 - Atual',
-    stacks: ['React', 'NodeJS', 'TypeScript', '.NET', 'PostgreSQL', 'Angular'],
+    stacks: [
+      {
+        value: 'Next/ReactJS',
+      },
+      {
+        value: 'Express/NodeJS',
+      },
+      {
+        value: 'PostgreSQL',
+      },
+      {
+        value: 'Mongo DB',
+      },
+    ],
     topics: [
-      'Desenvolvimento de novas features.',
-      'Manutenção de código e refatoração.',
-      'Versionamento de código e releases.',
-      'Atuaçao em análises de performance.',
+      {
+        value: 'Desenvolvimento de novas features.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Manutenção de código e refatoração.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Versionamento de código e releases.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Atuaçao em análises de performance.',
+        icon: 'taglist',
+      },
     ],
     default: true,
   },
@@ -81,12 +129,37 @@ export const experiences = [
     role: 'Fullstack developer',
     company: 'Tassinari',
     period: 'Freelancer',
-    stacks: ['React', 'Node', 'TypeScript', 'GraphQL', 'PostgreSQL'],
+    stacks: [
+      {
+        value: 'React',
+      },
+      {
+        value: 'NodeJS',
+      },
+      {
+        value: 'TypeScript',
+      },
+      {
+        value: 'PostgreSQL',
+      },
+    ],
     topics: [
-      'Criação de landing pages',
-      'Consultoria',
-      'Desenvolvimento de projetos SPA',
-      'Desenvolvimento de APIs',
+      {
+        value: 'Desenvolvimento de novas features.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Manutenção de código e refatoração.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Versionamento de código e releases.',
+        icon: 'taglist',
+      },
+      {
+        value: 'Atuaçao em análises de performance.',
+        icon: 'taglist',
+      },
     ],
     default: true,
   },
