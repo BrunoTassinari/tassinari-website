@@ -61,6 +61,29 @@ export const skills = {
   ],
 };
 
+export const projects = [
+  {
+    keyof: 'project-1',
+    name: 'Flex Turismos',
+    subtitle: 'Landing Page',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'flex-turismos',
+    link: 'https://brunotassinari.github.io/flex-turismos/',
+    alt: 'Project 1',
+    stack: [
+      {
+        value: 'HTML/CSS',
+      },
+      {
+        value: 'Tailwind CSS',
+      },
+      {
+        value: 'JavaScript',
+      },
+    ],
+  },
+];
+
 export const experiences = [
   {
     id: '1',
