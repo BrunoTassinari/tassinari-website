@@ -92,16 +92,16 @@ export const experiences = [
     period: 'Dez 2021 - Atual',
     stacks: [
       {
-        value: 'Next/ReactJS',
+        value: 'ReactJS',
       },
       {
-        value: 'Express/NodeJS',
+        value: 'NodeJS',
       },
       {
         value: 'PostgreSQL',
       },
       {
-        value: 'Mongo DB',
+        value: 'MongoDB',
       },
     ],
     topics: [

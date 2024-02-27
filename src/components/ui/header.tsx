@@ -88,7 +88,7 @@ const Navbar = () => {
 
 export const Header = () => (
   <header className="bg-color-bg border-b-color-primary border-b-[1px] fixed z-30 w-[100%]">
-    <div className="max-w-[93%] mx-auto py-1 flex items-center justify-between">
+    <div className="max-w-[93%] mx-auto py-2 flex items-center justify-between">
       <span className="text-[1rem] lg:text-[1.1rem] font-bold">
         Bruno Tassinari
       </span>
