@@ -102,7 +102,7 @@ const Navbar = () => {
                   <AnimatedLink
                     key={anchor.id}
                     href={`#${anchor.id}`}
-                    label={anchor.label}
+                    label={anchor.value}
                     onClick={toggleMenu}
                   />
                 ))}
