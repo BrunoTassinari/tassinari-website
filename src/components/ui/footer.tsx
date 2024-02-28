@@ -3,7 +3,7 @@ import { Icon } from './icon';
 export const Footer = () => {
   return (
     <footer className="bg-color-bg border-t-[1px] border-t-color-primary">
-      <div className="w-[90%] py-2 m-auto flex items-center justify-between">
+      <div className="w-[90%] py-3 m-auto flex items-center justify-between">
         <span className="text-sm">
           &copy; 2024 -{' '}
           <a

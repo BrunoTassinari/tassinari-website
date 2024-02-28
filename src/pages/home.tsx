@@ -1,7 +1,8 @@
 import { Container, Header } from '../components/ui/container';
 import { Icon } from '../components/ui/icon';
 import { List } from '../components/ui/list';
-import { skills, experiences } from '../constants';
+import { skills, experiences, projects } from '../constants';
+import { GridContainer, GridItem } from '../components/ui/grid';
 import {
   Tabs,
   TabsContent,
@@ -11,7 +12,7 @@ import {
 
 export const Home = () => {
   return (
-    <div className="my-8 flex flex-col gap-4">
+    <div className="my-12 flex flex-col gap-4">
       <Container>
         <Header title="Bruno Tassinari" subtitle="Meu nome é" />
         <p className="text-[0.9rem] text-color-text text-justify">
@@ -68,6 +69,11 @@ export const Home = () => {
 
       <Container id="projects">
         <Header title="Meus projetos" subtitle="Portfólio" />
+        <GridContainer>
+          {projects.map((item: any) => (
+            <GridItem key={item.id} item={item} />
+          ))}
+        </GridContainer>
       </Container>
 
       <Container id="experience">
