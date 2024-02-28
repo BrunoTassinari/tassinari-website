@@ -19,7 +19,7 @@ export const GridItem = ({ item }: GridItemProps) => {
     <div className="group cursor-pointer">
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-color-bg xl:aspect-h-8 xl:aspect-w-7">
         <img
-          src={`assets/${item.image}.png`}
+          src={`/${item.image}.png`}
           alt={item.alt}
           className="h-full w-full object-cover object-center group-hover:opacity-75"
         />
