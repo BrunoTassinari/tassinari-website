@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Container, Header } from '../components/ui/container';
 import { Icon } from '../components/ui/icon';
 import { List } from '../components/ui/list';
@@ -9,8 +10,12 @@ import {
   TabsList,
   TabsTrigger,
 } from '../components/ui/tabs';
+import { ModalProject } from '../components/ui/modal';
 
 export const Home = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [project, setProject] = useState({});
+
   return (
     <div className="my-12 flex flex-col gap-4">
       <Container>
@@ -71,9 +76,22 @@ export const Home = () => {
         <Header title="Meus projetos" subtitle="Portfólio" />
         <GridContainer>
           {projects.map((item: any) => (
-            <GridItem key={item.id} item={item} />
+            <GridItem
+              key={item.id}
+              item={item}
+              onClick={() => {
+                setProject(item);
+                setShowModal(true);
+              }}
+            />
           ))}
         </GridContainer>
+
+        <ModalProject
+          project={project}
+          setShowModal={setShowModal}
+          showModal={showModal}
+        />
       </Container>
 
       <Container id="experience">

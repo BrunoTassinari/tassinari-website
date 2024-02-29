@@ -4,6 +4,7 @@ interface GridProps {
 
 interface GridItemProps {
   item: any;
+  onClick: () => void;
 }
 
 export const GridContainer = ({ children }: GridProps) => {
@@ -14,16 +15,21 @@ export const GridContainer = ({ children }: GridProps) => {
   );
 };
 
-export const GridItem = ({ item }: GridItemProps) => {
+export const GridItem = ({ item, onClick }: GridItemProps) => {
   return (
     <div className="group cursor-pointer">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-color-bg xl:aspect-h-8 xl:aspect-w-7">
+      <button
+        type="button"
+        className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-color-bg xl:aspect-h-8 xl:aspect-w-7"
+        aria-label="Click project to see more details"
+        onClick={onClick}
+      >
         <img
           src={`/${item.image}.png`}
           alt={item.alt}
           className="h-full w-full object-cover object-center group-hover:opacity-75"
         />
-      </div>
+      </button>
       <h3 className="mt-2 text-sm text-color-text">{item.subtitle}</h3>
       <p className="mt-1 text-lg font-medium text-color-primary ">
         {item.title}
