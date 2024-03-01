@@ -21,11 +21,9 @@ export const Home = () => {
       <Container>
         <Header title="Bruno Tassinari" subtitle="Meu nome é" />
         <p className="text-[0.9rem] text-color-text text-justify">
-          Lorem Ipsum é simplesmente uma simulação de texto da indústria
-          tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
-          quando um impressor desconhecido pegou uma bandeja de tipos e os
-          embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum é
-          simplesmente uma simulação de texto.
+          Olá! Eu sou o Bruno! Sou desenvolvedor fullstack com foco Javascript.
+          Atualmente estou estudando e me aprimorando cada vez mais. Estou
+          disponível para novos projetos e oportunidades. Vamos conversar!
         </p>
         <div>
           <section className="flex items-center gap-2">
@@ -56,11 +54,14 @@ export const Home = () => {
       <Container id="about">
         <Header title="Sobre mim" subtitle="Informações" />
         <p className="text-[0.9rem] text-color-text text-justify">
-          Lorem Ipsum é simplesmente uma simulação de texto da indústria
-          tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
-          quando um impressor desconhecido pegou uma bandeja de tipos e os
-          embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum é
-          simplesmente uma simulação de texto.
+          Começei no mundo da progração em 2020, quando iniciei a graduação de
+          análise e desenvolvimento de sistemas. Depois disso mergulhei mais
+          fundo ainda na pandemia, quando paricipéi da primeira imersão da
+          Alura. Desde então, venho estudando e me aprimorando cada vez mais.
+          Atualmente, estou focado em me tornar um desenvolvedor fullstack com
+          foco em Javascript como priciapl linguagem de programação. Mas também
+          conhecimentos em várias outras tecnologias que pude usar no meu
+          trabalho.
         </p>
       </Container>
 
