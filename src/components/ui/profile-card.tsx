@@ -1,6 +1,6 @@
 export const ProfileCard = () => {
   return (
-    <div className="w-[20%]">
+    <div className="relative my-4 w-80 items-end hidden lg:flex shadow-md ">
       <img
         src="/profile.jpg"
         alt="Bruno tassinari"

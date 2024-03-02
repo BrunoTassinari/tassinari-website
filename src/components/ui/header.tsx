@@ -92,7 +92,7 @@ const SideMenu = () => {
 
 const Navbar = () => {
   return (
-    <nav className="hidden lg:block">
+    <nav className="hidden lg:block w-[80%]">
       <LinkedList
         type="row"
         items={anchors}
@@ -105,13 +105,11 @@ const Navbar = () => {
 export const Header = () => (
   <header className="bg-color-bg border-b-color-primary border-b-[1px] fixed z-30 w-[100%]">
     <div className="max-w-[87%] mx-auto py-2 flex items-center justify-between">
-      <span className="text-xl  font-bold">Bruno Tassinari</span>
+      <span className=" text-xl font-bold lg:w-[30%]">Bruno Tassinari</span>
 
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 lg:w-[30%] lg:justify-end">
         <ToggleTheme />
         <SideMenu />
       </div>

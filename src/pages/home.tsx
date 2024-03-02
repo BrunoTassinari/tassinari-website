@@ -11,6 +11,7 @@ import {
   TabsTrigger,
 } from '../components/ui/tabs';
 import { ModalProject } from '../components/ui/modal';
+import { ProfileCard } from '../components/ui/profile-card';
 
 export const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -18,38 +19,42 @@ export const Home = () => {
 
   return (
     <div className="my-16 flex flex-col gap-4 lg:gap-20">
-      <Container>
-        <Header title="Bruno Tassinari" subtitle="Meu nome é" />
-        <p className="text-sm lg:text-base text-color-text text-justify">
-          Olá! Eu sou o Bruno! Sou desenvolvedor fullstack com foco Javascript.
-          Atualmente estou estudando e me aprimorando cada vez mais. Estou
-          disponível para novos projetos e oportunidades. Vamos conversar!
-        </p>
-        <div>
-          <section className="flex items-center gap-2">
-            <a
-              aria-label="github"
-              className="underline text-xs"
-              href="https://github.com/BrunoTassinari"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon icon="github" size={28} className="mr-1" />
-            </a>
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:max-w-[80%] lg:m-auto">
+        <Container>
+          <Header title="Bruno Tassinari" subtitle="Meu nome é" />
+          <p className="text-sm lg:text-base text-color-text text-justify lg:max-w-[65%]">
+            Olá! Eu sou o Bruno! Sou desenvolvedor fullstack com foco
+            Javascript. Atualmente estou estudando e me aprimorando cada vez
+            mais. Estou disponível para novos projetos e oportunidades. Vamos
+            conversar!
+          </p>
+          <div>
+            <section className="flex items-center gap-2">
+              <a
+                aria-label="github"
+                className="underline text-xs"
+                href="https://github.com/BrunoTassinari"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon icon="github" size={28} className="mr-1" />
+              </a>
 
-            <a
-              aria-label="linkedin"
-              className="underline text-xs"
-              href="
+              <a
+                aria-label="linkedin"
+                className="underline text-xs"
+                href="
               https://www.linkedin.com/in/bruno-tassinari-5b6b2b1b7/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon icon="linkedin" size={28} className="mr-1" />
-            </a>
-          </section>
-        </div>
-      </Container>
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon icon="linkedin" size={28} className="mr-1" />
+              </a>
+            </section>
+          </div>
+        </Container>
+        <ProfileCard />
+      </div>
 
       <Container
         id="about"
@@ -77,7 +82,7 @@ export const Home = () => {
         className="lg:items-center lg:max-w-[60%] lg:m-auto lg:justify-between"
       >
         <Header
-          title="Tecnologias"
+          title="Habilidades"
           subtitle="Conhecimentos"
           className="lg:hidden"
         />
