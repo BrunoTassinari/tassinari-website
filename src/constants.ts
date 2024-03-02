@@ -78,7 +78,8 @@ export const projects = [
     id: 'project-1',
     title: 'Flex Turismos',
     subtitle: 'Landing Page',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description:
+      'Projeto feito durante a imersão alura com foco em desenvolvimento de landing pages. Aprendendo a utilizar os principais conceitos de flexbox.',
     image: 'flex-turismos',
     link: 'https://brunotassinari.github.io/flex-turismos/',
     alt: 'Project 1',
@@ -98,7 +99,8 @@ export const projects = [
     id: 'project-2',
     title: 'Flex Turismos',
     subtitle: 'Landing Page',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description:
+      'Projeto feito durante a imersão alura com foco em desenvolvimento de landing pages. Aprendendo a utilizar os principais conceitos de flexbox.',
     image: 'flex-turismos',
     link: 'https://brunotassinari.github.io/flex-turismos/',
     alt: 'Project 1',
@@ -118,7 +120,8 @@ export const projects = [
     id: 'project-3',
     title: 'Flex Turismos',
     subtitle: 'Landing Page',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description:
+      'Projeto feito durante a imersão alura com foco em desenvolvimento de landing pages. Aprendendo a utilizar os principais conceitos de flexbox.',
     image: 'flex-turismos',
     link: 'https://brunotassinari.github.io/flex-turismos/',
     alt: 'Project 1',
