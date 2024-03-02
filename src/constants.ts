@@ -1,6 +1,6 @@
 export const anchors = [
   { id: 'about', value: 'Sobre mim' },
-  { id: 'skills', value: 'Conhecimentos' },
+  { id: 'skills', value: 'Habilidades' },
   { id: 'projects', value: 'Meus projetos' },
   { id: 'experience', value: 'Experiências' },
   { id: 'contact', value: 'Contato' },
@@ -76,6 +76,46 @@ export const skills = {
 export const projects = [
   {
     id: 'project-1',
+    title: 'Flex Turismos',
+    subtitle: 'Landing Page',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'flex-turismos',
+    link: 'https://brunotassinari.github.io/flex-turismos/',
+    alt: 'Project 1',
+    stack: [
+      {
+        value: 'HTML/CSS',
+      },
+      {
+        value: 'Tailwind CSS',
+      },
+      {
+        value: 'JavaScript',
+      },
+    ],
+  },
+  {
+    id: 'project-2',
+    title: 'Flex Turismos',
+    subtitle: 'Landing Page',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'flex-turismos',
+    link: 'https://brunotassinari.github.io/flex-turismos/',
+    alt: 'Project 1',
+    stack: [
+      {
+        value: 'HTML/CSS',
+      },
+      {
+        value: 'Tailwind CSS',
+      },
+      {
+        value: 'JavaScript',
+      },
+    ],
+  },
+  {
+    id: 'project-3',
     title: 'Flex Turismos',
     subtitle: 'Landing Page',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
