@@ -7,6 +7,13 @@ interface ListProps {
   action?: () => void;
 }
 
+interface LinkedListProps {
+  items: any[];
+  type?: 'column' | 'row';
+  action?: () => void;
+  linkStyle?: string;
+}
+
 export const List = ({ items, type, highlight }: ListProps) => (
   <ul className={type === 'row' ? 'flex gap-4' : ''}>
     {items?.map((item) => (
@@ -24,16 +31,21 @@ export const List = ({ items, type, highlight }: ListProps) => (
   </ul>
 );
 
-export const LinkedList = ({ items, type, highlight, action }: ListProps) => (
-  <ul className={type === 'row' ? 'flex gap-4' : ''}>
+export const LinkedList = ({
+  items,
+  type,
+  action,
+  linkStyle,
+}: LinkedListProps) => (
+  <ul className={type === 'row' ? 'flex gap-4 justify-between' : ''}>
     {items?.map((item) => (
-      <li key={item.id} className="my-1">
-        <section className="my-1 flex items-center gap-2">
+      <li key={item.id} className={type !== 'row' ? 'my-2' : ''}>
+        <section className="flex items-center gap-1">
           {item.icon ? <Icon icon={item.icon} size={24} /> : null}
           <a
             href={`#${item.id}`}
             {...(action ? { onClick: action } : {})}
-            className={`m-0 text-base ${highlight ? 'text-color-primary' : 'text-color-text-secondary'}`}
+            className={`text-base ${linkStyle}`}
           >
             {item.value}
           </a>

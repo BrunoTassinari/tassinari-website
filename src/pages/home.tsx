@@ -11,49 +11,61 @@ import {
   TabsTrigger,
 } from '../components/ui/tabs';
 import { ModalProject } from '../components/ui/modal';
+import { ProfileCard } from '../components/ui/profile-card';
 
 export const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [project, setProject] = useState({});
 
   return (
-    <div className="my-12 flex flex-col gap-4">
-      <Container>
-        <Header title="Bruno Tassinari" subtitle="Meu nome é" />
-        <p className="text-[0.9rem] text-color-text text-justify">
-          Olá! Eu sou o Bruno! Sou desenvolvedor fullstack com foco Javascript.
-          Atualmente estou estudando e me aprimorando cada vez mais. Estou
-          disponível para novos projetos e oportunidades. Vamos conversar!
-        </p>
-        <div>
-          <section className="flex items-center gap-2">
-            <a
-              aria-label="github"
-              className="underline text-xs"
-              href="https://github.com/BrunoTassinari"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon icon="github" size={28} className="mr-1" />
-            </a>
+    <div className="my-16 flex flex-col gap-4 lg:gap-20">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:max-w-[80%] lg:m-auto">
+        <Container>
+          <Header title="Bruno Tassinari" subtitle="Meu nome é" />
+          <p className="text-sm lg:text-base text-color-text text-justify lg:max-w-[65%]">
+            Olá! Eu sou o Bruno! Sou desenvolvedor fullstack com foco
+            Javascript. Atualmente estou estudando e me aprimorando cada vez
+            mais. Estou disponível para novos projetos e oportunidades. Vamos
+            conversar!
+          </p>
+          <div>
+            <section className="flex items-center gap-2">
+              <a
+                aria-label="github"
+                className="underline text-xs"
+                href="https://github.com/BrunoTassinari"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon icon="github" size={28} className="mr-1" />
+              </a>
 
-            <a
-              aria-label="linkedin"
-              className="underline text-xs"
-              href="
+              <a
+                aria-label="linkedin"
+                className="underline text-xs"
+                href="
               https://www.linkedin.com/in/bruno-tassinari-5b6b2b1b7/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon icon="linkedin" size={28} className="mr-1" />
-            </a>
-          </section>
-        </div>
-      </Container>
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon icon="linkedin" size={28} className="mr-1" />
+              </a>
+            </section>
+          </div>
+        </Container>
+        <ProfileCard />
+      </div>
 
-      <Container id="about">
-        <Header title="Sobre mim" subtitle="Informações" />
-        <p className="text-[0.9rem] text-color-text text-justify">
+      <Container
+        id="about"
+        className="lg:items-center lg:max-w-[60%] lg:m-auto"
+      >
+        <Header
+          title="Sobre mim"
+          subtitle="Informações"
+          className="lg:hidden"
+        />
+        <p className="text-sm lg:text-base text-color-text text-justify">
           Começei no mundo da progração em 2020, quando iniciei a graduação de
           análise e desenvolvimento de sistemas. Depois disso mergulhei mais
           fundo ainda na pandemia, quando paricipéi da primeira imersão da
@@ -65,9 +77,16 @@ export const Home = () => {
         </p>
       </Container>
 
-      <Container id="skills">
-        <Header title="Tecnologias" subtitle="Conhecimentos" />
-        <section className="flex justify-around">
+      <Container
+        id="skills"
+        className="lg:items-center lg:max-w-[60%] lg:m-auto lg:justify-between"
+      >
+        <Header
+          title="Habilidades"
+          subtitle="Conhecimentos"
+          className="lg:hidden"
+        />
+        <section className="w-[100%] flex justify-between">
           <List items={skills.frontend} />
           <List items={skills.backend} />
         </section>
@@ -128,14 +147,21 @@ export const Home = () => {
         </Tabs>
       </Container>
 
-      <Container id="contact">
-        <Header subtitle="Vamos conversar" title="Entre em contato" />
+      <Container
+        id="contact"
+        className="lg:items-center lg:max-w-[50%] lg:m-auto"
+      >
+        <Header
+          subtitle="Vamos conversar"
+          title="Entre em contato"
+          className="lg:hidden"
+        />
         <span className="m-0 text-[1rem] text-gray dark:text-whiteIce">
           Estou disponível para novos projetos e oportunidades. Vamos conversar!
         </span>
         <button
           type="button"
-          className="bg-color-primary text-color-text-secondary p-1 rounded-md transition-colors hover:bg-color-hover-primary"
+          className="bg-color-primary text-color-text-secondary p-1 rounded-md transition-colors hover:bg-color-hover-primary w-[100%]"
         >
           <a href="mailto:bruno.fagundes80@gmail.com">Entre em contato</a>
         </button>

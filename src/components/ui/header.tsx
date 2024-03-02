@@ -42,7 +42,7 @@ const ToggleTheme = () => {
   );
 };
 
-const Navbar = () => {
+const SideMenu = () => {
   const [open, setOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -59,7 +59,7 @@ const Navbar = () => {
         type="button"
         onClick={toggleMenu}
         aria-label="Open menu"
-        className="transition-colors hover:bg-color-bg-secondary rounded-lg p-1"
+        className="transition-colors hover:bg-color-bg-secondary rounded-lg p-1 lg:hidden"
       >
         {open ? (
           <Icon icon="closeMenu" size={24} />
@@ -77,7 +77,11 @@ const Navbar = () => {
             className="fixed right-0 top-12 origin-top bg-color-primary overflow-hidden rounded-b-lg"
           >
             <nav className="p-4">
-              <LinkedList items={anchors} action={toggleMenu} />
+              <LinkedList
+                items={anchors}
+                action={toggleMenu}
+                linkStyle="text-color-text-secondary"
+              />
             </nav>
           </motion.div>
         )}
@@ -86,16 +90,28 @@ const Navbar = () => {
   );
 };
 
+const Navbar = () => {
+  return (
+    <nav className="hidden lg:block w-[80%]">
+      <LinkedList
+        type="row"
+        items={anchors}
+        linkStyle="text-color-text text-lg"
+      />
+    </nav>
+  );
+};
+
 export const Header = () => (
   <header className="bg-color-bg border-b-color-primary border-b-[1px] fixed z-30 w-[100%]">
-    <div className="max-w-[93%] mx-auto py-2 flex items-center justify-between">
-      <span className="text-[1rem] lg:text-[1.1rem] font-bold">
-        Bruno Tassinari
-      </span>
+    <div className="max-w-[87%] mx-auto py-2 flex items-center justify-between">
+      <span className=" text-xl font-bold lg:w-[30%]">Bruno Tassinari</span>
 
-      <div className="flex items-center gap-1">
+      <Navbar />
+
+      <div className="flex items-center gap-1 lg:w-[30%] lg:justify-end">
         <ToggleTheme />
-        <Navbar />
+        <SideMenu />
       </div>
     </div>
   </header>

@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <div className="h-screen w-screen bg-color-bg text-color-text">
       <Header />
-      <main className="max-w-[85%] mx-auto flex-col items-center justify-center">
+      <main className="max-w-[86%] mx-auto flex-col items-center justify-center">
         <Home />
       </main>
       <Footer />
