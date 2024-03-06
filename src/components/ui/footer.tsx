@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className="bg-color-bg border-t-[1px] border-t-color-primary">
       <div className="w-[87%] py-3 m-auto flex items-center justify-between">
-        <span className="text-sm">
+        <span className="text-sm lg:text-base">
           &copy; 2024 -{' '}
           <a
             className="underline text-strokeBlue dark:text-lightBlue"

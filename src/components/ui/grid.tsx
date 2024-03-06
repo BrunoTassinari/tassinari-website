@@ -30,8 +30,10 @@ export const GridItem = ({ item, onClick }: GridItemProps) => {
           className="h-full w-full object-cover object-center group-hover:opacity-75"
         />
       </button>
-      <h3 className="mt-2 text-sm text-color-text">{item.subtitle}</h3>
-      <p className="mt-1 text-lg font-medium text-color-primary ">
+      <h3 className="mt-2 text-sm lg:text-base text-color-text">
+        {item.subtitle}
+      </h3>
+      <p className="mt-1 text-lg lg:text-xl font-medium text-color-primary ">
         {item.title}
       </p>
       <div className="border-b-2 border-color-primary w-full mt-2" />

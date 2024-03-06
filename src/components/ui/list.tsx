@@ -21,7 +21,7 @@ export const List = ({ items, type, highlight }: ListProps) => (
         <section className="my-1 flex items-center gap-2">
           {item.icon ? <Icon icon={item.icon} size={24} /> : null}
           <span
-            className={`m-0 text-[0.8rem] ${highlight ? 'text-color-primary' : 'text-color-text'}`}
+            className={`m-0 text-sm lg:text-base ${highlight ? 'text-color-primary' : 'text-color-text'}`}
           >
             {item.value}
           </span>

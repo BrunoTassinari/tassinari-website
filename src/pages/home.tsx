@@ -130,10 +130,12 @@ export const Home = () => {
             {experiences.map((e: any) => (
               <TabsContent key={e.company} value={e.company}>
                 <div className="flex flex-col">
-                  <h3 className="text-[1.3rem] font-semibold text-color-text">
+                  <h3 className="text-lg lg:text-xl font-semibold text-color-text">
                     {e.role}
                   </h3>
-                  <span className="text-sm text-color-text">{e.period}</span>
+                  <span className="text-sm lg:text-base text-gray-500">
+                    {e.period}
+                  </span>
                 </div>
                 <div className="mr-2 my-2">
                   <List items={e.stacks} type="row" highlight />
@@ -156,12 +158,12 @@ export const Home = () => {
           title="Entre em contato"
           className="lg:hidden"
         />
-        <span className="m-0 text-[1rem] text-gray dark:text-whiteIce">
+        <span className="m-0 text-sm lg:text-base text-gray dark:text-whiteIce">
           Estou disponível para novos projetos e oportunidades. Vamos conversar!
         </span>
         <button
           type="button"
-          className="bg-color-primary text-color-text-secondary p-1 rounded-md transition-colors hover:bg-color-hover-primary w-[100%]"
+          className="bg-color-primary text-lg lg:text-xl text-color-text-secondary p-1 rounded-md transition-colors hover:bg-color-hover-primary w-[100%]"
         >
           <a href="mailto:bruno.fagundes80@gmail.com">Entre em contato</a>
         </button>
