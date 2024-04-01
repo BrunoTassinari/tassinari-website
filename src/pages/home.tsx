@@ -67,13 +67,11 @@ export const Home = () => {
         />
         <p className="text-sm lg:text-base text-color-text text-justify">
           Começei no mundo da progração em 2020, quando iniciei a graduação de
-          análise e desenvolvimento de sistemas. Depois disso mergulhei mais
-          fundo ainda na pandemia, quando paricipéi da primeira imersão da
-          Alura. Desde então, venho estudando e me aprimorando cada vez mais.
-          Atualmente, estou focado em me tornar um desenvolvedor fullstack com
-          foco em Javascript como priciapl linguagem de programação. Mas também
-          conhecimentos em várias outras tecnologias que pude usar no meu
-          trabalho.
+          análise e desenvolvimento de sistemas. Depois disso, ainda na
+          pandemia, participei da primeira imersão dev da Alura. Desde então,
+          venho me aprimorando cada vez mais. Atualmente, estou estudando React,
+          Node e Typescript. Também sou fascinado por jogos e tecnologia. Em
+          minhas horas vagas, gosto de jogar e assistir séries.
         </p>
       </Container>
 
